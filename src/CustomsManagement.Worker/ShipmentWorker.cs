@@ -1,20 +1,17 @@
-using CustomsManagement.Application.Commands.UpdateShipmentStatus;
-using CustomsManagement.Application.Services;
-using CustomsManagement.Domain.Constants;
 using MediatR;
+using CustomsManagement.Application.Commands.UpdateShipmentStatus;
+using CustomsManagement.Application.Queries.GetShipments;
 
 namespace CustomsManagement.Worker;
 
 public class ShipmentWorker : BackgroundService
 {
     private readonly ILogger<ShipmentWorker> _logger;
-    private readonly ShipmentService _shipmentService;
     private readonly IMediator _mediator;
 
-    public ShipmentWorker(ILogger<ShipmentWorker> logger, ShipmentService shipmentService, IMediator mediator)
+    public ShipmentWorker(ILogger<ShipmentWorker> logger, IMediator mediator)
     {
         _logger = logger;
-        _shipmentService = shipmentService;
         _mediator = mediator;
     }
 
@@ -29,14 +26,18 @@ public class ShipmentWorker : BackgroundService
                     _logger.LogInformation("ShipmentWorker running at: {time}", DateTimeOffset.Now);
                 }
                 
-                var delayedShipments = await _shipmentService.GetDelayedShipmentsAsync();
+                var delayedShipments = await _mediator.Send(new GetShipmentsQuery
+                {
+                    Status = "Pending",
+                    DelayedDayCount = 3 
+                }, stoppingToken);
 
                 foreach (var shipment in delayedShipments)
                 {
                     await _mediator.Send(new UpdateShipmentStatusCommand
                     {
                         Id = shipment.Id,
-                        Status = ShipmentStatus.Delayed
+                        Status = "Delayed"
                     }, stoppingToken);
                 }
 

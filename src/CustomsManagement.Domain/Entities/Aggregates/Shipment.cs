@@ -46,11 +46,6 @@ namespace CustomsManagement.Domain.Entities.Aggregates
 
             Status = newStatus;
         }
-
-        public bool IsDelayed()
-        {
-            return Status == ShipmentStatus.Pending && (DateTime.UtcNow - CreatedDate).TotalDays > 3;
-        }
         
         public void MarkAsDeleted()
         {
