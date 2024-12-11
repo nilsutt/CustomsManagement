@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CustomsManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(CustomsManagementDbContext))]
-    [Migration("20241211140717_Initial")]
+    [Migration("20241211203153_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -38,6 +38,14 @@ namespace CustomsManagement.Infrastructure.Migrations
 
                     b.Property<decimal>("DeclaredValue")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<bool>("Deleted")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(false);
+
+                    b.Property<DateTime?>("DeletedDate")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ImporterExporterName")
                         .IsRequired()

@@ -11,13 +11,11 @@ public static class InfrastructureServiceCollectionExtension
 {
     public static IServiceCollection AddInfrastructureEFRepositories(
         this IServiceCollection services,
-        string connectionString)
+        string? connectionString)
     {
-        // Register DbContext with the provided connection string
         services.AddDbContext<CustomsManagementDbContext>(options =>
             options.UseNpgsql(connectionString));
-
-        // Register generic repository
+        
         services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
         return services;
@@ -34,7 +32,6 @@ public static class InfrastructureServiceCollectionExtension
         }
         catch (Exception ex)
         {
-            // Log the error or handle it accordingly
             Console.WriteLine($"An error occurred while migrating the database: {ex.Message}");
             throw;
         }

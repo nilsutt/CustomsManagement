@@ -1,4 +1,5 @@
 using CustomsManagement.Application.Commands.CreateShipment;
+using CustomsManagement.Application.Commands.DeleteShipment;
 using CustomsManagement.Application.Commands.UpdateShipmentStatus;
 using CustomsManagement.Application.Queries.GetShipment;
 using CustomsManagement.Application.Queries.GetShipments;
@@ -13,10 +14,10 @@ public class ShipmentController : ControllerBase
 {
     private readonly IMediator _mediator;
 
-    public ShipmentController(IMediator mediator)
-    {
+    public ShipmentController(
+        IMediator mediator
+    ) =>
         _mediator = mediator;
-    }
 
     [HttpPost("create")]
     public async Task<IActionResult> CreateShipment([FromBody] CreateShipmentCommand command)
@@ -25,7 +26,7 @@ public class ShipmentController : ControllerBase
         return CreatedAtAction(nameof(GetShipment), new { id = result }, result);
     }
 
-    [HttpPost("update-status")]
+    [HttpPut("update-status")]
     public async Task<IActionResult> UpdateShipmentStatus([FromBody] UpdateShipmentStatusCommand command)
     {
         var result = await _mediator.Send(command);
@@ -55,5 +56,12 @@ public class ShipmentController : ControllerBase
 
         var result = await _mediator.Send(query);
         return Ok(result);
+    }
+
+    [HttpDelete("delete")]
+    public async Task<IActionResult> DeleteShipment([FromBody] DeleteShipmentCommand command)
+    {
+        await _mediator.Send(command);
+        return NoContent();
     }
 }

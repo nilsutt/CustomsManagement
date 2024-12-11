@@ -38,6 +38,14 @@ namespace CustomsManagement.Infrastructure.Configurations
 
             builder.Property(s => s.CreatedDate)
                 .IsRequired();
+            
+            builder.Property(s => s.Deleted)
+                .HasDefaultValue(false); 
+
+            builder.Property(s => s.DeletedDate)
+                .IsRequired(false);
+
+            builder.HasQueryFilter(s => !s.Deleted);
         }
     }
 }

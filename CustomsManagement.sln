@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomsManagement.Domain", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomsManagement.Infrastructure", "src\CustomsManagement.Infrastructure\CustomsManagement.Infrastructure.csproj", "{54CB0DE0-4330-4CA5-A029-01F763FD8C87}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomsManagement.Worker", "src\CustomsManagement.Worker\CustomsManagement.Worker.csproj", "{BE84CC7F-FBF1-4C68-99CB-D6F41442935B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,11 +34,16 @@ Global
 		{54CB0DE0-4330-4CA5-A029-01F763FD8C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54CB0DE0-4330-4CA5-A029-01F763FD8C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54CB0DE0-4330-4CA5-A029-01F763FD8C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE84CC7F-FBF1-4C68-99CB-D6F41442935B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE84CC7F-FBF1-4C68-99CB-D6F41442935B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE84CC7F-FBF1-4C68-99CB-D6F41442935B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE84CC7F-FBF1-4C68-99CB-D6F41442935B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{355928DF-4476-4B7D-9D7B-9936848A9826} = {2E3737E3-1F69-4B77-B4BC-6FFB26A1CAB0}
 		{1D317F79-885B-4604-B158-5D83C8036A65} = {2E3737E3-1F69-4B77-B4BC-6FFB26A1CAB0}
 		{61D66814-264F-465B-8691-A38607E31016} = {2E3737E3-1F69-4B77-B4BC-6FFB26A1CAB0}
 		{54CB0DE0-4330-4CA5-A029-01F763FD8C87} = {2E3737E3-1F69-4B77-B4BC-6FFB26A1CAB0}
+		{BE84CC7F-FBF1-4C68-99CB-D6F41442935B} = {2E3737E3-1F69-4B77-B4BC-6FFB26A1CAB0}
 	EndGlobalSection
 EndGlobal

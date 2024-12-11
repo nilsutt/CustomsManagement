@@ -1,6 +1,6 @@
 namespace CustomsManagement.Domain.Constants;
 
-public class ShipmentStatus
+public static class ShipmentStatus
 {
     public const string Pending = "Pending";
     public const string Checking = "Checking";

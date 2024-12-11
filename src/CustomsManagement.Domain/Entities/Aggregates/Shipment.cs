@@ -9,8 +9,12 @@ namespace CustomsManagement.Domain.Entities.Aggregates
         public decimal DeclaredValue { get; private set; }
         public decimal Tax { get; private set; }
         public string Status { get; private set; }
-        
-        private Shipment() { } 
+        public bool Deleted { get; private set; }
+        public DateTime? DeletedDate { get; private set; }
+
+        private Shipment()
+        {
+        }
 
         public Shipment(string importerExporterName, ProductType productType, decimal declaredValue)
         {
@@ -20,6 +24,8 @@ namespace CustomsManagement.Domain.Entities.Aggregates
             Tax = CalculateTax();
             Status = ShipmentStatus.Pending;
             CreatedDate = DateTime.UtcNow;
+            Deleted = false;
+            DeletedDate = null;
         }
 
         private decimal CalculateTax()
@@ -44,6 +50,12 @@ namespace CustomsManagement.Domain.Entities.Aggregates
         public bool IsDelayed()
         {
             return Status == ShipmentStatus.Pending && (DateTime.UtcNow - CreatedDate).TotalDays > 3;
+        }
+        
+        public void MarkAsDeleted()
+        {
+            Deleted = true;
+            DeletedDate = DateTime.UtcNow;
         }
     }
 }

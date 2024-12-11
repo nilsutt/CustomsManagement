@@ -13,7 +13,6 @@
         "packagesPath": "/Users/Yerel/.nuget/packages/",
         "outputPath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.API/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/Yerel/.nuget/NuGet/NuGet.Config"
         ],
@@ -46,7 +45,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -117,7 +117,6 @@
         "packagesPath": "/Users/Yerel/.nuget/packages/",
         "outputPath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/Yerel/.nuget/NuGet/NuGet.Config"
         ],
@@ -147,7 +146,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -205,7 +205,6 @@
         "packagesPath": "/Users/Yerel/.nuget/packages/",
         "outputPath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/Yerel/.nuget/NuGet/NuGet.Config"
         ],
@@ -231,7 +230,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -275,7 +275,6 @@
         "packagesPath": "/Users/Yerel/.nuget/packages/",
         "outputPath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Infrastructure/obj/",
         "projectStyle": "PackageReference",
-        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/Yerel/.nuget/NuGet/NuGet.Config"
         ],
@@ -305,7 +304,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
