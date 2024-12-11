@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "xcB8IcmIDKCp7ctkEAIqBT4SlLO84BszZZZOwI4eJ4k=",
+  "Source": "CustomsManagement.API",
+  "BasePath": "_content/CustomsManagement.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

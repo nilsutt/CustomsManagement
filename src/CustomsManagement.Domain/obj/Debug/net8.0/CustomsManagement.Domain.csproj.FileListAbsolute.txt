@@ -1,0 +1,11 @@
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/bin/Debug/net8.0/CustomsManagement.Domain.deps.json
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/bin/Debug/net8.0/CustomsManagement.Domain.dll
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/bin/Debug/net8.0/CustomsManagement.Domain.pdb
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.AssemblyInfoInputs.cache
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.AssemblyInfo.cs
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.csproj.CoreCompileInputs.cache
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.dll
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/refint/CustomsManagement.Domain.dll
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.pdb
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/ref/CustomsManagement.Domain.dll
