@@ -9,3 +9,4 @@
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/refint/CustomsManagement.Domain.dll
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.pdb
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/ref/CustomsManagement.Domain.dll
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/Debug/net8.0/CustomsManagement.Domain.sourcelink.json

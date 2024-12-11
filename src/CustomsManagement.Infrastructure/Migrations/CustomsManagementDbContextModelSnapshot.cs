@@ -25,7 +25,10 @@ namespace CustomsManagement.Infrastructure.Migrations
             modelBuilder.Entity("CustomsManagement.Domain.Entities.Aggregates.Shipment", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");

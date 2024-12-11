@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CustomsManagement.Infrastructure.Migrations
 {
     [DbContext(typeof(CustomsManagementDbContext))]
-    [Migration("20241211122720_Initial")]
+    [Migration("20241211140717_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -28,7 +28,10 @@ namespace CustomsManagement.Infrastructure.Migrations
             modelBuilder.Entity("CustomsManagement.Domain.Entities.Aggregates.Shipment", b =>
                 {
                     b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("timestamp with time zone");

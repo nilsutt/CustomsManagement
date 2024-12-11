@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CustomsManagement.Infrastructure.Repositories;
 
-public class GenericRepository <T> : IRepository<T> where T : BaseEntity
+public class GenericRepository<T> : IRepository<T> where T : BaseEntity
 {
     private readonly CustomsManagementDbContext _context;
 

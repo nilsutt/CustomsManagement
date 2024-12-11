@@ -17,10 +17,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers\" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <ProjectReference Include="..\CustomsManagement.Application\CustomsManagement.Application.csproj" />
       <ProjectReference Include="..\CustomsManagement.Infrastructure\CustomsManagement.Infrastructure.csproj" />
     </ItemGroup>
 

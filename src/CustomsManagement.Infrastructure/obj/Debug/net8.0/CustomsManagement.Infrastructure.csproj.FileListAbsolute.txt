@@ -18,3 +18,4 @@
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Infrastructure/obj/Debug/net8.0/CustomsManagement.Infrastructure.pdb
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Infrastructure/obj/Debug/net8.0/CustomsManagement.Infrastructure.genruntimeconfig.cache
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Infrastructure/obj/Debug/net8.0/ref/CustomsManagement.Infrastructure.dll
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Infrastructure/obj/Debug/net8.0/CustomsManagement.Infrastructure.sourcelink.json

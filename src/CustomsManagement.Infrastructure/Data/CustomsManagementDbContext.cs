@@ -15,7 +15,7 @@ public class CustomsManagementDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+        //base.OnModelCreating(modelBuilder);
         modelBuilder.ApplyConfiguration(new ShipmentConfiguration());
     }
 }

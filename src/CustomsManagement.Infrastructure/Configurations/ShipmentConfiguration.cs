@@ -14,7 +14,7 @@ namespace CustomsManagement.Infrastructure.Configurations
 
             builder.Property(s => s.Id)
                 .IsRequired()
-                .ValueGeneratedNever();
+                .ValueGeneratedOnAdd();
 
             builder.Property(s => s.ImporterExporterName)
                 .IsRequired()

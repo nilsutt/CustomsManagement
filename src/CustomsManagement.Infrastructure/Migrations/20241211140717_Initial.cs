@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -15,7 +16,8 @@ namespace CustomsManagement.Infrastructure.Migrations
                 name: "Shipments",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false),
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     ImporterExporterName = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
                     ProductType = table.Column<int>(type: "integer", maxLength: 50, nullable: false),
                     DeclaredValue = table.Column<decimal>(type: "numeric(18,2)", nullable: false),

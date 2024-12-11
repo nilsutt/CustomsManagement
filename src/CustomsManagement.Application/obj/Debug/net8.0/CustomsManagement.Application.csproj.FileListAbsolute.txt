@@ -9,3 +9,8 @@
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/Debug/net8.0/refint/CustomsManagement.Application.dll
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/Debug/net8.0/CustomsManagement.Application.pdb
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/Debug/net8.0/ref/CustomsManagement.Application.dll
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/bin/Debug/net8.0/CustomsManagement.Domain.dll
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/bin/Debug/net8.0/CustomsManagement.Domain.pdb
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/Debug/net8.0/CustomsManagement.Application.csproj.AssemblyReference.cache
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/Debug/net8.0/CustomsManagement.Application.sourcelink.json
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/Debug/net8.0/CustomsM.01533E1E.Up2Date
