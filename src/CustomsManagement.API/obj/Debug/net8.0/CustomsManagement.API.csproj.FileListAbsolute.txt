@@ -121,3 +121,4 @@
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.API/bin/Debug/net8.0/CustomsManagement.Application.dll
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.API/bin/Debug/net8.0/CustomsManagement.Application.pdb
 /Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.API/obj/Debug/net8.0/CustomsManagement.API.sourcelink.json
+/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.API/bin/Debug/net8.0/FluentValidation.dll

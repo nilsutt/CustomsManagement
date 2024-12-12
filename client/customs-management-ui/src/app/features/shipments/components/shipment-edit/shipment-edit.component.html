@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$Title$</title>
+</head>
+<body>
+<form (ngSubmit)="updateShipment()" #shipmentForm="ngForm">
+  <mat-form-field appearance="fill">
+    <mat-label>Importer/Exporter Name</mat-label>
+    <input matInput [(ngModel)]="shipment.importerExporterName" name="importerExporterName" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Product Type</mat-label>
+    <mat-select [(ngModel)]="shipment.productType" name="productType" required>
+      <mat-option value="Electronic">Electronic</mat-option>
+      <mat-option value="Food">Food</mat-option>
+      <mat-option value="Textile">Textile</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Declared Value</mat-label>
+    <input matInput type="number" [(ngModel)]="shipment.declaredValue" name="declaredValue" required />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Update</button>
+</form>
+
+$END$
+</body>
+</html>
