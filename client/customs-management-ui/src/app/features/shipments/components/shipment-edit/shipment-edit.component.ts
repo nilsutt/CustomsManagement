@@ -9,7 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  standalone: true,
+  standalone: false,
   imports: [FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule],
   selector: 'app-shipment-edit',
   templateUrl: './shipment-edit.component.html',

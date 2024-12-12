@@ -1,20 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ShipmentService } from '../../../../core/services/shipment.service';
 import { Shipment } from '../../models/shipment.model';
-import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatSelectModule } from '@angular/material/select';
-import { MatButtonModule } from '@angular/material/button';
-import {RouterLink} from '@angular/router';
-import {MatTable} from '@angular/material/table';
 
 @Component({
-  standalone: true,
-  imports: [FormsModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, RouterLink, MatTable],
   selector: 'app-shipment-list',
   templateUrl: './shipment-list.component.html',
   styleUrls: ['./shipment-list.component.scss'],
+  standalone: false
 })
 export class ShipmentListComponent implements OnInit {
   shipments: Shipment[] = [];
