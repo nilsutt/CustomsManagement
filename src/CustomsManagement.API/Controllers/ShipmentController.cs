@@ -1,6 +1,7 @@
 using CustomsManagement.Application.Commands.CreateShipment;
 using CustomsManagement.Application.Commands.DeleteShipment;
 using CustomsManagement.Application.Commands.UpdateShipmentStatus;
+using CustomsManagement.Application.Constants;
 using CustomsManagement.Application.Queries.GetShipment;
 using CustomsManagement.Application.Queries.GetShipments;
 using MediatR;
@@ -22,6 +23,11 @@ public class ShipmentController : ControllerBase
     [HttpPost("create")]
     public async Task<IActionResult> CreateShipment([FromBody] CreateShipmentCommand command)
     {
+        if (command == null)
+        {
+            return BadRequest(ExceptionMessages.InvalidRequest);
+        }
+
         var result = await _mediator.Send(command);
         return CreatedAtAction(nameof(GetShipment), new { id = result }, result);
     }
@@ -29,17 +35,24 @@ public class ShipmentController : ControllerBase
     [HttpPut("update-status")]
     public async Task<IActionResult> UpdateShipmentStatus([FromBody] UpdateShipmentStatusCommand command)
     {
+        if (command == null || command.Id <= 0 || string.IsNullOrEmpty(command.Status))
+        {
+            return BadRequest(ExceptionMessages.InvalidRequest);
+        }
+
         var result = await _mediator.Send(command);
-        return CreatedAtAction(nameof(GetShipment), new { id = result }, result);
+        return Ok(result);
     }
 
     [HttpGet("get-shipment")]
     public async Task<IActionResult> GetShipment([FromQuery] int id)
     {
-        var query = new GetShipmentQuery
+        if (id <= 0)
         {
-            Id = id,
-        };
+            return BadRequest(ExceptionMessages.InvalidShipmentId);
+        }
+
+        var query = new GetShipmentQuery { Id = id };
 
         var result = await _mediator.Send(query);
         return Ok(result);
@@ -48,6 +61,11 @@ public class ShipmentController : ControllerBase
     [HttpGet("get-shipments")]
     public async Task<IActionResult> GetShipments([FromQuery] string? status, [FromQuery] int? delayedDayCount)
     {
+        if (delayedDayCount.HasValue && delayedDayCount.Value <= 0)
+        {
+            return BadRequest(ExceptionMessages.InvalidDelayedDayCount);
+        }
+
         var query = new GetShipmentsQuery
         {
             Status = status,
@@ -61,6 +79,11 @@ public class ShipmentController : ControllerBase
     [HttpDelete("delete")]
     public async Task<IActionResult> DeleteShipment([FromBody] DeleteShipmentCommand command)
     {
+        if (command == null || command.Id <= 0)
+        {
+            return BadRequest(ExceptionMessages.InvalidShipmentId);
+        }
+
         await _mediator.Send(command);
         return NoContent();
     }

@@ -45,7 +45,7 @@ namespace CustomsManagement.Infrastructure.Configurations
             builder.Property(s => s.DeletedDate)
                 .IsRequired(false);
 
-            builder.HasQueryFilter(s => !s.Deleted);
+            // builder.HasQueryFilter(s => !s.Deleted);
         }
     }
 }

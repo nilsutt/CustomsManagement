@@ -12,7 +12,7 @@ namespace CustomsManagement.Domain.Entities.Aggregates
         public bool Deleted { get; private set; }
         public DateTime? DeletedDate { get; private set; }
 
-        private Shipment()
+        public Shipment()
         {
         }
 

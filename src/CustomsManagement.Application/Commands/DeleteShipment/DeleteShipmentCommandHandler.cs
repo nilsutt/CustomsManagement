@@ -1,3 +1,4 @@
+using CustomsManagement.Application.Constants;
 using CustomsManagement.Domain.Entities.Aggregates;
 using CustomsManagement.Domain.Interfaces;
 using MediatR;
@@ -15,11 +16,16 @@ public class DeleteShipmentCommandHandler : IRequestHandler<DeleteShipmentComman
 
     public async Task<Unit> Handle(DeleteShipmentCommand request, CancellationToken cancellationToken)
     {
+        if (request.Id <= 0)
+        {
+            throw new ApplicationException(ExceptionMessages.InvalidShipmentId);
+        }
+
         var shipment = await _shipmentRepository.GetByIdAsync(request.Id);
 
         if (shipment == null)
         {
-            throw new KeyNotFoundException($"Shipment with Id {request.Id} not found.");
+            throw new ApplicationException(ExceptionMessages.ShipmentNotFound);
         }
 
         shipment.MarkAsDeleted();

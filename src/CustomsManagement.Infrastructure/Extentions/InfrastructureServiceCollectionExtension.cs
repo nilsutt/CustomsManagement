@@ -11,11 +11,17 @@ public static class InfrastructureServiceCollectionExtension
 {
     public static IServiceCollection AddInfrastructureEFRepositories(
         this IServiceCollection services,
-        string? connectionString)
+        string? connectionString
+    )
     {
+        if (string.IsNullOrWhiteSpace(connectionString))
+        {
+            throw new ArgumentNullException(nameof(connectionString), "Connection string cannot be null or empty.");
+        }
+
         services.AddDbContext<CustomsManagementDbContext>(options =>
             options.UseNpgsql(connectionString));
-        
+
         services.AddScoped(typeof(IRepository<>), typeof(GenericRepository<>));
 
         return services;

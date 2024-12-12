@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/RBx3wo4Bpw=",
+  "dgSpecHash": "PQ+yoaBbGTI=",
   "success": true,
   "projectFilePath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Worker/CustomsManagement.Worker.csproj",
   "expectedPackageFiles": [
+    "/Users/Yerel/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
     "/Users/Yerel/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
     "/Users/Yerel/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/Yerel/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.1.0/mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",

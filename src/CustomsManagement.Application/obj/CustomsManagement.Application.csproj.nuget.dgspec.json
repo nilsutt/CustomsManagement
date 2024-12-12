@@ -13,6 +13,7 @@
         "packagesPath": "/Users/Yerel/.nuget/packages/",
         "outputPath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/obj/",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/Yerel/.nuget/NuGet/NuGet.Config"
         ],
@@ -42,13 +43,16 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.11.0, )"
+            },
             "MediatR": {
               "target": "Package",
               "version": "[12.4.1, )"
@@ -101,6 +105,7 @@
         "packagesPath": "/Users/Yerel/.nuget/packages/",
         "outputPath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Domain/obj/",
         "projectStyle": "PackageReference",
+        "UsingMicrosoftNETSdk": false,
         "configFilePaths": [
           "/Users/Yerel/.nuget/NuGet/NuGet.Config"
         ],
@@ -126,8 +131,7 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {

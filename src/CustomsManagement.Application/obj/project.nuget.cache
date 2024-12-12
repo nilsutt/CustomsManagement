@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "COfUmnOKtOg=",
+  "dgSpecHash": "9EYK2n6Q994=",
   "success": true,
   "projectFilePath": "/Users/Yerel/Desktop/Nilsu/CustomsManagement/src/CustomsManagement.Application/CustomsManagement.Application.csproj",
   "expectedPackageFiles": [
+    "/Users/Yerel/.nuget/packages/fluentvalidation/11.11.0/fluentvalidation.11.11.0.nupkg.sha512",
     "/Users/Yerel/.nuget/packages/mediatr/12.4.1/mediatr.12.4.1.nupkg.sha512",
     "/Users/Yerel/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
     "/Users/Yerel/.nuget/packages/mediatr.extensions.microsoft.dependencyinjection/11.1.0/mediatr.extensions.microsoft.dependencyinjection.11.1.0.nupkg.sha512",
@@ -26,7 +27,7 @@
       "code": "NU1608",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Bağımlılık kısıtlaması dışında algılanan paket sürümü: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0, MediatR (>= 11.0.0 && < 12.0.0) gerektiriyor ancak sürüm MediatR 12.4.1 çözümlenmiş.",
+      "message": "Detected package version outside of dependency constraint: MediatR.Extensions.Microsoft.DependencyInjection 11.1.0 requires MediatR (>= 11.0.0 && < 12.0.0) but version MediatR 12.4.1 was resolved.",
       "libraryId": "MediatR",
       "targetGraphs": [
         "net8.0"

@@ -1,3 +1,4 @@
+using CustomsManagement.Application.Constants;
 using CustomsManagement.Domain.Entities.Aggregates;
 using CustomsManagement.Domain.Interfaces;
 using MediatR;
@@ -15,16 +16,26 @@ public class UpdateShipmentStatusCommandHandler : IRequestHandler<UpdateShipment
 
     public async Task<int> Handle(UpdateShipmentStatusCommand request, CancellationToken cancellationToken)
     {
+        if (request.Id <= 0)
+        {
+            throw new ApplicationException(ExceptionMessages.InvalidShipmentId);
+        }
+
+        if (string.IsNullOrEmpty(request.Status))
+        {
+            throw new ApplicationException(ExceptionMessages.InvalidShipmentStatus);
+        }
+
         var shipment = await _shipmentRepository.GetByIdAsync(request.Id);
         if (shipment == null)
         {
-            throw new ArgumentException(nameof(UpdateShipmentStatusCommand));
+            throw new ApplicationException(ExceptionMessages.ShipmentNotFound);
         }
-        
+
         shipment.UpdateStatus(request.Status);
 
         await _shipmentRepository.UpdateAsync(shipment);
-        
+
         return shipment.Id;
     }
 }

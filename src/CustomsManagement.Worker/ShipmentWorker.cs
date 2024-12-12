@@ -1,18 +1,19 @@
 using MediatR;
 using CustomsManagement.Application.Commands.UpdateShipmentStatus;
 using CustomsManagement.Application.Queries.GetShipments;
+using CustomsManagement.Domain.Constants;
 
 namespace CustomsManagement.Worker;
 
 public class ShipmentWorker : BackgroundService
 {
     private readonly ILogger<ShipmentWorker> _logger;
-    private readonly IMediator _mediator;
+    private readonly IServiceScopeFactory _serviceScopeFactory;
 
-    public ShipmentWorker(ILogger<ShipmentWorker> logger, IMediator mediator)
+    public ShipmentWorker(ILogger<ShipmentWorker> logger, IServiceScopeFactory serviceScopeFactory)
     {
         _logger = logger;
-        _mediator = mediator;
+        _serviceScopeFactory = serviceScopeFactory;
     }
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -21,23 +22,27 @@ public class ShipmentWorker : BackgroundService
         {
             try
             {
+                using var scope = _serviceScopeFactory.CreateScope();
+
+                var mediator = scope.ServiceProvider.GetRequiredService<IMediator>();
+
                 if (_logger.IsEnabled(LogLevel.Information))
                 {
                     _logger.LogInformation("ShipmentWorker running at: {time}", DateTimeOffset.Now);
                 }
-                
-                var delayedShipments = await _mediator.Send(new GetShipmentsQuery
+
+                var delayedShipments = await mediator.Send(new GetShipmentsQuery
                 {
-                    Status = "Pending",
-                    DelayedDayCount = 3 
+                    Status = ShipmentStatus.Pending,
+                    DelayedDayCount = ShipmentConstants.DelayedDayThreshold
                 }, stoppingToken);
 
                 foreach (var shipment in delayedShipments)
                 {
-                    await _mediator.Send(new UpdateShipmentStatusCommand
+                    await mediator.Send(new UpdateShipmentStatusCommand
                     {
                         Id = shipment.Id,
-                        Status = "Delayed"
+                        Status = ShipmentStatus.Delayed
                     }, stoppingToken);
                 }
 
@@ -50,7 +55,7 @@ public class ShipmentWorker : BackgroundService
             {
                 _logger.LogError(ex, "An error occurred while processing delayed shipments.");
             }
-            
+
             await Task.Delay(TimeSpan.FromMinutes(10), stoppingToken);
         }
     }

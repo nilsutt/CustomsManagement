@@ -5,6 +5,6 @@ namespace CustomsManagement.Application.Queries.GetShipments;
 
 public class GetShipmentsQuery : IRequest<List<ShipmentDto>>
 {
-    public string Status { get; set; } // Optional filter for shipment status
-    public int? DelayedDayCount { get; set; } // Optional filter for creation date
+    public string Status { get; set; }
+    public int? DelayedDayCount { get; set; }
 }
