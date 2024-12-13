@@ -2,6 +2,9 @@
 
 Customs Management is a project aimed at managing shipment records and operations for customs clearance. The project includes features for creating, editing, listing, and updating shipment records, with a focus on simplifying customs management processes. Built using .NET and Angular, it integrates key functionalities to provide a seamless user experience.
 
+![Customs Management Logo](https://github.com/nilsutt/CustomsManagement/raw/main/client/src/assets/images/1.png)
+
+
 ## Features
 
 ### Backend Features
@@ -13,6 +16,7 @@ Customs Management is a project aimed at managing shipment records and operation
 - Enum-based product type management for shipments.
 - Repository pattern for data access abstraction.
 - Uses **PostgreSQL** as the database.
+
 
 ### Frontend Features
 - Built with **Angular** framework.
