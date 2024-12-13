@@ -1,0 +1,22 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened>
+    <mat-toolbar class="custom-toolbar"></mat-toolbar>
+    <mat-nav-list>
+      <!-- Listele Butonu -->
+      <a mat-list-item routerLink="/shipments" routerLinkActive="active-link">
+        <mat-icon>list</mat-icon>
+        <span>Listele</span>
+      </a>
+
+      <!-- Oluştur Butonu -->
+      <a mat-list-item (click)="createAndRedirect()" style="cursor: pointer;">
+        <mat-icon>add</mat-icon>
+        <span>Oluştur</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

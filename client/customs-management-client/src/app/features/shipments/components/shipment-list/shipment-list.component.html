@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gümrük Yönetim Sistemi</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="page-header">
+    <h2>Gümrük Yönetim Sistemi</h2>
+  </div>
+
+  <div class="filter-container">
+    <mat-form-field appearance="fill" class="filter-field">
+      <mat-label>Durum</mat-label>
+      <mat-select [(ngModel)]="selectedStatus" (selectionChange)="applyFilter()">
+        <mat-option value="all">Hepsi</mat-option>
+        <mat-option value="Pending">Beklemede</mat-option>
+        <mat-option value="Delayed">Gecikmiş</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="filter-field">
+      <mat-label>Gecikmiş Gün Sayısı</mat-label>
+      <input matInput type="number" [(ngModel)]="delayedDays" (input)="applyFilter()" />
+    </mat-form-field>
+  </div>
+
+  <div class="mat-table-container">
+    <table mat-table [dataSource]="dataSource" class="mat-table" matSort>
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+        <td mat-cell *matCellDef="let shipment">{{ shipment.id }}</td>
+      </ng-container>
+      <ng-container matColumnDef="importerExporterName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>İthalatçı/İhracatçı</th>
+        <td mat-cell *matCellDef="let shipment">{{ shipment.importerExporterName }}</td>
+      </ng-container>
+      <ng-container matColumnDef="productType">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Ürün Türü</th>
+        <td mat-cell *matCellDef="let shipment">{{ shipment.productType }}</td>
+      </ng-container>
+      <ng-container matColumnDef="declaredValue">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Beyan Edilen Değer</th>
+        <td mat-cell *matCellDef="let shipment">{{ shipment.declaredValue | currency:'TRY':'symbol':'1.2-2' }}</td>
+      </ng-container>
+      <ng-container matColumnDef="tax">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Vergi</th>
+        <td mat-cell *matCellDef="let shipment">{{ shipment.tax | currency:'TRY':'symbol':'1.2-2' }}</td>
+      </ng-container>
+      <ng-container matColumnDef="totalValue">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Toplam Değer</th>
+        <td mat-cell *matCellDef="let shipment">{{ (shipment.declaredValue + shipment.tax) | currency:'TRY':'symbol':'1.2-2' }}</td>
+      </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Durum</th>
+        <td mat-cell *matCellDef="let shipment">
+          <mat-chip
+            [ngClass]="{
+              'status-delayed': shipment.status === 'Delayed',
+              'status-pending': shipment.status === 'Pending',
+              'status-default': shipment.status !== 'Delayed' && shipment.status !== 'Pending'
+            }"
+            selected>
+            {{ shipment.status }}
+          </mat-chip>
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>İşlemler</th>
+        <td mat-cell *matCellDef="let shipment">
+          <button mat-icon-button color="primary" [routerLink]="['/shipment/edit', shipment.id]">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteShipment(shipment.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons>
+    </mat-paginator>
+  </div>
+</div>
+</body>
+</html>

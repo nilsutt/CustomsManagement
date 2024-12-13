@@ -1,0 +1,38 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Azure Blue Tema Renk Paleti
+$azure-blue-primary: mat.m2-define-palette(mat.$m2-blue-palette, 500, 300, 700);
+$azure-blue-accent: mat.m2-define-palette(mat.$m2-cyan-palette, A200, A100, A400);
+$azure-blue-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$azure-blue-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $azure-blue-primary,
+    accent: $azure-blue-accent,
+    warn: $azure-blue-warn,
+  )
+));
+
+// Angular Material tema uygulaması
+@include mat.all-component-themes($azure-blue-theme);
+
+// Global stil ayarları
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mat-chip {
+  margin-right: 5px;
+}

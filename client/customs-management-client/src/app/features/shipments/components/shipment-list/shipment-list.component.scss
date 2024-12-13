@@ -1,0 +1,88 @@
+@use '@angular/material' as mat;
+
+$primary-color: mat.m2-define-palette(mat.$m2-blue-palette, 500, 300, 700);
+
+.mat-table {
+  width: 100%;
+  border-spacing: 0;
+
+  th.mat-header-cell {
+    background-color: mat.m2-get-color-from-palette($primary-color, 500);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  td.mat-cell {
+    text-align: center;
+    padding: 8px;
+  }
+
+  .mat-row:nth-child(even) {
+    background-color: mat.m2-get-color-from-palette($primary-color, 50);
+  }
+
+  .mat-row:nth-child(odd) {
+    background-color: mat.m2-get-color-from-palette($primary-color, 100);
+  }
+
+  .status-delayed {
+    background-color: #e57373;
+    color: white;
+  }
+
+  .status-pending {
+    background-color: #ffb74d;
+    color: white;
+  }
+}
+
+.filter-container {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.filter-field {
+  width: 200px;
+}
+
+.mat-table-container {
+  margin-top: 24px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.page-header {
+  margin-top: 16px;
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #e3f2fd;
+  border-radius: 8px;
+}
+
+.page-header h2 {
+  margin: 0;
+  padding: 8px 0;
+}
+
+.page-header p {
+  margin: 0;
+  padding: 0 0 8px 0;
+  color: #666;
+}
+
+.status-delayed {
+  background-color: #e57373 !important; /* Kırmızı arka plan */
+  color: white !important;
+}
+.status-pending {
+  background-color: #ffb74d !important; /* Turuncu arka plan */
+  color: white !important;
+}
+.status-default {
+  background-color: #81c784 !important; /* Yeşil arka plan */
+  color: white !important;
+}

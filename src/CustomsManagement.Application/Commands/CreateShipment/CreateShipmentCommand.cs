@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using CustomsManagement.Domain.Constants;
 using MediatR;
 
@@ -7,5 +8,6 @@ public class CreateShipmentCommand : IRequest<int>
 {
     public string ImporterExporterName { get; set; }
     public ProductType ProductType { get; set; }
+    public int ProductTypeId { get; set; }
     public decimal DeclaredValue { get; set; }
 }

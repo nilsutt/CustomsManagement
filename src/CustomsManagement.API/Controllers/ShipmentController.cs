@@ -1,5 +1,6 @@
 using CustomsManagement.Application.Commands.CreateShipment;
 using CustomsManagement.Application.Commands.DeleteShipment;
+using CustomsManagement.Application.Commands.UpdateShipment;
 using CustomsManagement.Application.Commands.UpdateShipmentStatus;
 using CustomsManagement.Application.Constants;
 using CustomsManagement.Application.Queries.GetShipment;
@@ -42,6 +43,25 @@ public class ShipmentController : ControllerBase
 
         var result = await _mediator.Send(command);
         return Ok(result);
+    }
+    
+    [HttpPut("update")]
+    public async Task<IActionResult> UpdateShipment([FromBody] UpdateShipmentCommand command)
+    {
+        if (command == null || command.Id <= 0)
+        {
+            return BadRequest("Invalid request");
+        }
+
+        try
+        {
+            var result = await _mediator.Send(command);
+            return Ok(new { Id = result });
+        }
+        catch (ApplicationException ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
 
     [HttpGet("get-shipment")]

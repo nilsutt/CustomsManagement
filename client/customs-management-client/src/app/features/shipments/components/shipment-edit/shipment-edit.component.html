@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gümrük Yönetim Sistemi - Düzenle</title>
+</head>
+<body>
+
+<div class="edit-container">
+  <div class="edit-header">
+    <h2>Sevkiyat Düzenle</h2>
+    <p>Lütfen sevkiyat bilgilerini düzenleyin ve kaydedin.</p>
+  </div>
+
+  <form (ngSubmit)="updateShipment()" #shipmentForm="ngForm" class="edit-form">
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Importer/Exporter Name</mat-label>
+      <input matInput [(ngModel)]="shipment.importerExporterName" name="importerExporterName" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Product Type</mat-label>
+      <mat-select [(ngModel)]="shipment.productTypeId" name="productTypeId" required>
+        <mat-option *ngFor="let type of productTypes" [value]="type.id">{{ type.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Declared Value</mat-label>
+      <input matInput type="number" [(ngModel)]="shipment.declaredValue" name="declaredValue" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Status</mat-label>
+      <input matInput [(ngModel)]="shipment.status" name="status" required />
+    </mat-form-field>
+
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit">Güncelle</button>
+      <button mat-raised-button color="warn" type="button" (click)="cancel()">İptal</button>
+    </div>
+  </form>
+</div>
+
+</body>
+</html>

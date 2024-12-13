@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CustomsManagement.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3bc4a990b59cb5a855e837b09e533d640096cbc8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b9801403f6c97c7e5d7fb434868ceee387a2b33")]
 [assembly: System.Reflection.AssemblyProductAttribute("CustomsManagement.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CustomsManagement.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

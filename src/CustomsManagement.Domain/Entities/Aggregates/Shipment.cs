@@ -52,5 +52,23 @@ namespace CustomsManagement.Domain.Entities.Aggregates
             Deleted = true;
             DeletedDate = DateTime.UtcNow;
         }
+
+        public void UpdateDetails(string importerExporterName, ProductType productType, decimal declaredValue, string status)
+        {
+            if (string.IsNullOrWhiteSpace(importerExporterName))
+            {
+                throw new ArgumentException("Importer/Exporter Name cannot be null or empty.");
+            }
+
+            if (declaredValue <= 0)
+            {
+                throw new ArgumentException("Declared Value must be greater than zero.");
+            }
+            
+            ImporterExporterName = importerExporterName;
+            ProductType = productType;
+            DeclaredValue = declaredValue;
+            Status = status;
+        }
     }
 }

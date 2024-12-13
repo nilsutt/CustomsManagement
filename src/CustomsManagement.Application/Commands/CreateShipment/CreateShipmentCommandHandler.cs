@@ -17,19 +17,24 @@ public class CreateShipmentCommandHandler : IRequestHandler<CreateShipmentComman
 
     public async Task<int> Handle(CreateShipmentCommand request, CancellationToken cancellationToken)
     {
-        if (string.IsNullOrEmpty(request.ImporterExporterName))
+        if (string.IsNullOrWhiteSpace(request.ImporterExporterName))
         {
-            throw new ApplicationException(ExceptionMessages.ImporterExporterNameRequired);
+            throw new ArgumentException(ExceptionMessages.ImporterExporterNameRequired);
+        }
+
+        if (request.ProductTypeId > 0)
+        {
+            request.ProductType = (ProductType)request.ProductTypeId;
         }
 
         if (!Enum.IsDefined(typeof(ProductType), request.ProductType))
         {
-            throw new ApplicationException(ExceptionMessages.ProductTypeRequired);
+            throw new ArgumentException(ExceptionMessages.ProductTypeRequired);
         }
-
+        
         if (request.DeclaredValue <= 0)
         {
-            throw new ApplicationException(ExceptionMessages.InvalidDeclaredValue);
+            throw new ArgumentException(ExceptionMessages.InvalidDeclaredValue);
         }
 
         var shipment = new Shipment(
@@ -41,4 +46,5 @@ public class CreateShipmentCommandHandler : IRequestHandler<CreateShipmentComman
         await _shipmentRepository.AddAsync(shipment);
         return shipment.Id;
     }
+
 }
