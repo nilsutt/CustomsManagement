@@ -34,8 +34,8 @@ Customs Management is a project aimed at managing shipment records and operation
 
 ### Tools Required
 - **.NET 8.0 SDK**
-- **Node.js** (version 20 or above)
-- **Angular CLI** (version 19)
+- **Node.js** (version 18.19.1 or above)
+- **Angular CLI** (version 19.0.4)
 - **PostgreSQL**
 
 ### Environment Setup
