@@ -10,6 +10,7 @@ Customs Management is a project aimed at managing shipment records and operation
 ### Backend Features
 - Built with **.NET Core** using **ASP.NET Web API**.
 - Implements **CQRS** (Command Query Responsibility Segregation) pattern.
+- Follows **Domain-Driven Design (DDD)** principles.
 - Database operations handled with **Entity Framework Core**.
 - Uses **Mediator Pattern** via **MediatR** for clean architecture.
 - Exception handling and validation built-in using **FluentValidation**.
@@ -96,11 +97,11 @@ Customs Management is a project aimed at managing shipment records and operation
 - **CustomsManagement.Infrastructure**: Database context and repository implementations.
 
 ### Frontend
-- **CustomsManagement.UI**: Angular project with components for shipment management.
+- **customs-management-client**: Angular project with components for customs management.
 
 ## Usage
 
-### Shipment Management
+### Customs Management
 1. **List Shipments**:
     - View all shipments with sorting and filtering options.
 2. **Create Shipment**:
@@ -116,6 +117,7 @@ Customs Management is a project aimed at managing shipment records and operation
 - **.NET 8.0**
 - **Entity Framework Core**
 - **MediatR**
+-  **Domain-Driven Design (DDD)**
 - **FluentValidation**
 - **PostgreSQL**
 
