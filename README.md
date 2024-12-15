@@ -112,7 +112,7 @@ Customs Management is a project aimed at managing shipment records and operation
 - **CustomsManagement.Application**: Contains business logic and handlers for CQRS.
 - **CustomsManagement.Domain**: Core domain entities and enums.
 - **CustomsManagement.Infrastructure**: Database context and repository implementations.
-- **CustomsManagement.Worker**: Background service for shipment status updates.
+- **CustomsManagement.Worker**: Background service for scheduling and automating shipment status updates.
 
 ### Frontend
 - **customs-management-client**: Angular project with components for customs management.
