@@ -30,6 +30,21 @@ Customs Management is a project aimed at managing shipment records and operation
 - Navigation using Angular Router with sidenav for a user-friendly layout.
 - Integration with backend APIs for dynamic data management.
 
+
+### Worker Service
+The **CustomsManagement.Worker** service is designed to automate the periodic update of shipment statuses. It runs as a background process, monitoring and updating the status of shipments based on predefined business rules. 
+
+#### Key Features:
+- Built as a **.NET Worker Service**.
+- Scheduled updates for shipment statuses using **Timer** or **BackgroundService**.
+- Integration with the database via **Entity Framework Core**.
+- Seamless communication with the database for retrieving and updating shipment information.
+
+#### How It Works:
+1. The worker service retrieves a list of shipments from the database at regular intervals.
+2. Based on the shipment's current status and business rules, it updates the shipment's status.
+3. These updates are reflected in the main application, ensuring shipment records remain consistent and up-to-date.
+   
 ## Prerequisites
 
 ### Tools Required
@@ -50,7 +65,7 @@ Customs Management is a project aimed at managing shipment records and operation
    ```
 3. Install frontend dependencies:
    ```bash
-   cd src/CustomsManagement.UI
+   cd client/customs-management-client
    npm install
    ```
 
@@ -80,7 +95,7 @@ Customs Management is a project aimed at managing shipment records and operation
 ### Frontend
 1. Navigate to the UI folder:
    ```bash
-   cd src/CustomsManagement.UI
+   cd client/customs-management-client
    ```
 2. Start the Angular development server:
    ```bash
@@ -88,6 +103,12 @@ Customs Management is a project aimed at managing shipment records and operation
    ```
 3. The application will be available at `http://localhost:4200`.
 
+#### Running the Worker Service:
+1. Navigate to the worker service project directory:
+   ```bash
+   cd src/CustomsManagement.Worker
+   ```
+   
 ## Project Structure
 
 ### Backend
@@ -95,6 +116,7 @@ Customs Management is a project aimed at managing shipment records and operation
 - **CustomsManagement.Application**: Contains business logic and handlers for CQRS.
 - **CustomsManagement.Domain**: Core domain entities and enums.
 - **CustomsManagement.Infrastructure**: Database context and repository implementations.
+- **CustomsManagement.Worker**: Background service for shipment status updates.
 
 ### Frontend
 - **customs-management-client**: Angular project with components for customs management.
