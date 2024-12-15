@@ -18,6 +18,12 @@ Customs Management is a project aimed at managing shipment records and operation
 - Repository pattern for data access abstraction.
 - Uses **PostgreSQL** as the database.
 
+### Worker Service Features
+- A dedicated **Worker Service** is implemented to manage scheduled tasks.
+- **Shipment Status Scheduler**:
+  - Updates shipment statuses that remain in "Pending" for more than 3 days to "Delayed" automatically.
+  - This feature ensures that shipment statuses remain up-to-date without manual intervention.
+- Built using **.NET Worker Service** framework.
 
 ### Frontend Features
 - Built with **Angular** framework.
@@ -29,21 +35,6 @@ Customs Management is a project aimed at managing shipment records and operation
     - **Delete** shipment records.
 - Navigation using Angular Router with sidenav for a user-friendly layout.
 - Integration with backend APIs for dynamic data management.
-
-
-### Worker Service
-The **CustomsManagement.Worker** service is designed to automate the periodic update of shipment statuses. It runs as a background process, monitoring and updating the status of shipments based on predefined business rules. 
-
-#### Key Features:
-- Built as a **.NET Worker Service**.
-- Scheduled updates for shipment statuses using **Timer** or **BackgroundService**.
-- Integration with the database via **Entity Framework Core**.
-- Seamless communication with the database for retrieving and updating shipment information.
-
-#### How It Works:
-1. The worker service retrieves a list of shipments from the database at regular intervals.
-2. Based on the shipment's current status and business rules, it updates the shipment's status.
-3. These updates are reflected in the main application, ensuring shipment records remain consistent and up-to-date.
    
 ## Prerequisites
 
@@ -92,21 +83,16 @@ The **CustomsManagement.Worker** service is designed to automate the periodic up
    ```
 5. The API will be available at `http://localhost:5025`.
 
-#### Running the Worker Service:
-1. Navigate to the worker service project directory:
+### Worker Service
+1. Navigate to the Worker Service folder:
    ```bash
    cd src/CustomsManagement.Worker
    ```
-   2. Configure the connection string in `appsettings.json` to match your PostgreSQL configuration:
-   ```json
-   "ConnectionStrings": {
-       "DefaultConnection": "Host=localhost;Port=5432;Database=YourDatabaseName;Username=YourUsername;Password=YourPassword"
-   }
-   ```
-3. Build and run the worker service:
+2. Run the Worker Service:
    ```bash
    dotnet run
    ```
+3. The service will automatically update shipment statuses according to the scheduling logic.
 
 ### Frontend
 1. Navigate to the UI folder:
