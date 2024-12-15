@@ -92,6 +92,22 @@ The **CustomsManagement.Worker** service is designed to automate the periodic up
    ```
 5. The API will be available at `http://localhost:5025`.
 
+#### Running the Worker Service:
+1. Navigate to the worker service project directory:
+   ```bash
+   cd src/CustomsManagement.Worker
+   ```
+   2. Configure the connection string in `appsettings.json` to match your PostgreSQL configuration:
+   ```json
+   "ConnectionStrings": {
+       "DefaultConnection": "Host=localhost;Port=5432;Database=YourDatabaseName;Username=YourUsername;Password=YourPassword"
+   }
+   ```
+3. Build and run the worker service:
+   ```bash
+   dotnet run
+   ```
+
 ### Frontend
 1. Navigate to the UI folder:
    ```bash
@@ -102,12 +118,6 @@ The **CustomsManagement.Worker** service is designed to automate the periodic up
    ng serve
    ```
 3. The application will be available at `http://localhost:4200`.
-
-#### Running the Worker Service:
-1. Navigate to the worker service project directory:
-   ```bash
-   cd src/CustomsManagement.Worker
-   ```
    
 ## Project Structure
 
